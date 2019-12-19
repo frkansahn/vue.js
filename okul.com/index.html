@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="okul.com form sayfası">
+	<meta name="author" content="Furkan SAHIN">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Okul.com</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+	
+	<script src="https://unpkg.com/vue-tel-input"></script>
+</head>
+<body>
+	<div id="app">
+		<div class="container">
+			<div class="row">
+				<div class="col col-3">
+					<div class="row">
+						<div class="col col-12 form-title">
+							<i class="icon-phone"></i>
+							<span class="fl col text-center">Okul Hemen Sizi Arasın</span>
+						</div>
+						<div class="fl col-12 form-content">
+							<div class="box col-12 p-left p-right p-bottom">							
+								<input type="text" name="name" v-model="name" placeholder="Adınızı giriniz..">
+							</div>
+							<div class="box col-12 p-left p-right p-bottom">							
+								<input type="email" name="email" v-model="email" placeholder="Emailinizi giriniz..">
+							</div>
+							<div class="box col-12 p-left p-right p-bottom">							
+								<input type="date" name="date" v-model="date">
+							</div>
+							<div class="box col-12 p-left p-right p-bottom">							
+								<vue-tel-input v-model="phone"></vue-tel-input>
+							</div>
+							<div class="box col-12 p-left p-right p-bottom">
+								<textarea class="fl col-12" v-model="message" placeholder="Mesajınızı giriniz.."></textarea>
+							</div>
+							<div class="box col-12 p-left p-right">
+								<input class="fl col-12 send" type="button" name="send" value="İletişime Geç">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
