@@ -123,6 +123,7 @@ html,body,div,a,span,p
 .form-content textarea {
 	min-height: 90px;
 	margin-bottom: 15px;
+	resize: vertical;
 }
 
 .form-content .send
