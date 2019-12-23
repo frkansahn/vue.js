@@ -31,7 +31,7 @@
 		<transition name="bounce">
 			<div class="container" v-if="showTemplateOne">
 				<div class="row">
-					<div class="col col-3">
+					<div class="col col-3 col-md-4 col-sm-6 col-xs-12">
 						<div class="row">
 							<div class="col col-12 form-title">
 								<i class="icon-phone"></i>
@@ -61,7 +61,7 @@
 									<input class="fl col-12 send" type="button" name="send" value="İletişime Geç" @click="send">
 								</div>
 								<transition name="slide-fade">
-									<div v-if="success" class="box col-12 success">
+									<div v-if="success" class="box col-12 success" :class="{active : success}">
 										İşlem başarıyla gerçekleştirildi.
 									</div>
 								</transition>

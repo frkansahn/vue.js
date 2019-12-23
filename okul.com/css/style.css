@@ -16,6 +16,8 @@ html,body,div,a,span,p
 	max-width: 1200px;
 	width: 100%;
 	margin: 0 auto;
+	padding-right: 15px;
+	padding-left: 15px;
 }
 
 .row
@@ -102,18 +104,18 @@ html,body,div,a,span,p
 }
 
 .bounce-enter-active {
-  animation: bounce-in .5s;
+	animation: bounce-in .5s;
 }
 @keyframes bounce-in {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
+	0% {
+		transform: scale(0);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
 }
 
 #tasarim .col
@@ -133,9 +135,9 @@ html,body,div,a,span,p
 }
 
 #tasarim .col.active {
-    background: #f56666;
-    color: #ffffff;
-    border-radius: 5px;
+	background: #f56666;
+	color: #ffffff;
+	border-radius: 5px;
 }
 
 .form-title {
@@ -208,14 +210,14 @@ input[name="telephone"] {
 }
 
 .errorMessage {
-    font-size: 12px;
-    color: red;
-    padding-bottom: 3px;
-    float: left;
+	font-size: 12px;
+	color: red;
+	padding-bottom: 3px;
+	float: left;
 }
 
 .form-content input.errorBorder , .form-content .vdp-datepicker.errorBorder input ,  .vue-tel-input.errorBorder{
-    border: 1px solid red;
+	border: 1px solid red;
 }
 
 .vdp-datepicker__calendar
@@ -224,24 +226,48 @@ input[name="telephone"] {
 }
 
 .success {
-    background: #38ce13;
-    font-size: 14px;
-    text-align: center;
-    padding: 10px;
-    border-radius: 5px;
-    color: #ffffff;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+	background: #38ce13;
+	font-size: 14px;
+	text-align: center;
+	padding: 10px;
+	border-radius: 5px;
+	color: #ffffff;
+	position: absolute;
+	bottom: calc(100% - 35px);
+	left: 0;
 }
 
 .slide-fade-enter-active {
-  transition: all .3s ease;
+	transition: all 3s ease;
 }
 .slide-fade-leave-active {
-  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+	transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 .slide-fade-enter, .slide-fade-leave-to {
-  transform: translateX(10px);
-  opacity: 0;
+	transform: translateY(100%);
+	bottom: 0;
+}
+
+@media screen and (max-width: 1024px)
+{
+	.col-md-4
+	{
+		width: 25%;
+	}
+}
+
+@media screen and (max-width: 768px)
+{
+	.col-sm-6
+	{
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 540px)
+{
+	.col-xs-12
+	{
+		width: 100%;
+	}
 }

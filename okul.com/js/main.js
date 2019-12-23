@@ -83,7 +83,7 @@ var vm = new Vue({
 
 		success(newSuccess)
 		{
-			newSuccess == true ? setTimeout(() => this.success = false, 1000) : false; 
+			newSuccess == true ? setTimeout(() => this.success = false, 3000) : false; 
 		}
 	}
 })
