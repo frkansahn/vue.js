@@ -118,7 +118,7 @@ html,body,div,a,span,p
 }
 
 #tasarim .col.active {
-    background: #000000;
+    background: #f56666;
     color: #ffffff;
     border-radius: 5px;
 }
@@ -142,6 +142,7 @@ html,body,div,a,span,p
 .form-content {
 	padding: 0 15px;
 	border: 1px solid #cec5c5;
+	position: relative;
 }
 
 .form-content input , .form-content textarea {
@@ -198,11 +199,34 @@ input[name="telephone"] {
     float: left;
 }
 
-.form-content input.errorBorder , .form-content .errorBorder:not('.vue-tel-input') input  , .vue-tel-input.errorBorder{
+.form-content input.errorBorder , .form-content .vdp-datepicker.errorBorder input ,  .vue-tel-input.errorBorder{
     border: 1px solid red;
 }
 
 .vdp-datepicker__calendar
 {
 	width: 100% !important;
+}
+
+.success {
+    background: #38ce13;
+    font-size: 14px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
 }

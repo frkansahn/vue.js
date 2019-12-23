@@ -37,30 +37,33 @@
 							<span class="fl col text-center">Okul Hemen Sizi Arasın</span>
 						</div>
 						<div class="fl col-12 form-content">
-							<form class="fl col-12">
-								<div class="box col-12 p-left p-right p-bottom">
-									<span v-show="isErrorName" class="errorMessage">Lütfen adınızı giriniz..</span>						
-									<input :class="{errorBorder : isErrorName}" type="text" name="name" v-model="name" placeholder="Adınızı giriniz.." @click="isErrorName = false;" required="required">
+							<div class="box col-12 p-left p-right p-bottom">
+								<span v-show="isErrorName" class="errorMessage">Lütfen adınızı giriniz..</span>						
+								<input :class="{errorBorder : isErrorName}" type="text" name="name" v-model="name" placeholder="Adınızı giriniz.." @click="isErrorName = false;">
+							</div>
+							<div class="box col-12 p-left p-right p-bottom">
+								<span v-show="isErrorMail" class="errorMessage">Lütfen emailinizi kontrol ediniz..</span>							
+								<input :class="{errorBorder : isErrorMail}" type="email" name="email" v-model="email" placeholder="Emailinizi giriniz.." @click="isErrorMail = false;">
+							</div>
+							<div class="box col-12 p-left p-right p-bottom pos-r">
+								<span v-show="isErrorDate" class="errorMessage">Lütfen tarih seçiniz..</span>						
+								<vuejs-datepicker :class="{errorBorder : isErrorDate}" :language="tr" v-model="date" placeholder="Tarih seçiniz.."></vuejs-datepicker>
+							</div>
+							<div class="box col-12 p-left p-right p-bottom">
+								<span v-show="isErrorPhone" class="fl col-12 errorMessage">Lütfen telefon numaranızı giriniz..</span>						
+								<vue-tel-input :class="{errorBorder : isErrorPhone}" @click="isErrorPhone = false;" v-model="phone"></vue-tel-input>
+							</div>
+							<div class="box col-12 p-left p-right p-bottom">
+								<textarea class="fl col-12" v-model="message" placeholder="Mesajınızı giriniz.."></textarea>
+							</div>
+							<div class="box col-12 p-left p-right">
+								<input class="fl col-12 send" type="button" name="send" value="İletişime Geç" @click="send">
+							</div>
+							<transition name="slide-fade">
+								<div v-if="success" class="box col-12 success">
+									İşlem başarıyla gerçekleştirildi.
 								</div>
-								<div class="box col-12 p-left p-right p-bottom">
-									<span v-show="isErrorMail" class="errorMessage">Lütfen emailinizi kontrol ediniz..</span>							
-									<input :class="{errorBorder : isErrorMail}" type="email" name="email" v-model="email" placeholder="Emailinizi giriniz.." @click="isErrorMail = false;" required="required">
-								</div>
-								<div class="box col-12 p-left p-right p-bottom pos-r">
-									<span v-show="isErrorDate" class="errorMessage">Lütfen tarih seçiniz..</span>						
-									<vuejs-datepicker :class="{errorBorder : isErrorDate}" :language="tr" v-model="date" placeholder="Tarih seçiniz.."></vuejs-datepicker>
-								</div>
-								<div class="box col-12 p-left p-right p-bottom">
-									<span v-show="isErrorPhone" class="fl col-12 errorMessage">Lütfen telefon numaranızı giriniz..</span>						
-									<vue-tel-input :class="{errorBorder : isErrorPhone}" @click="isErrorPhone = false;" v-model="phone" required="required"></vue-tel-input>
-								</div>
-								<div class="box col-12 p-left p-right p-bottom">
-									<textarea class="fl col-12" v-model="message" placeholder="Mesajınızı giriniz.."></textarea>
-								</div>
-								<div class="box col-12 p-left p-right">
-									<input class="fl col-12 send" type="submit" name="send" value="İletişime Geç" @click="send">
-								</div>
-							</form>
+							</transition>
 						</div>
 					</div>
 				</div>
