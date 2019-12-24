@@ -121,23 +121,19 @@ html,body,div,a,span,p
 #tasarim .col
 {
 	padding-bottom: 10px;
-	padding-top: 10px;
-	margin-bottom: 10px;
-	font-size: 16px;
-	font-weight: 500;
-	color: #000000;
-	cursor: pointer;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    cursor: pointer;
+    background: #f12d2dba;
+    border-radius: 5px;
 }
 
 #tasarim .col:hover
 {
 	text-decoration: underline;
-}
-
-#tasarim .col.active {
-	background: #f56666;
-	color: #ffffff;
-	border-radius: 5px;
 }
 
 .form-title {
@@ -251,6 +247,18 @@ input[name="telephone"] {
 	left: 0;
 }
 
+.unsuccess {
+	background: #f90000ba;
+	font-size: 14px;
+	text-align: center;
+	padding: 10px;
+	border-radius: 5px;
+	color: #ffffff;
+	position: absolute;
+	bottom: calc(100% - 35px);
+	left: 0;
+}
+
 .slide-fade-enter-active {
 	transition: all 3s ease;
 }
@@ -266,7 +274,7 @@ input[name="telephone"] {
 {
 	.col-md-4
 	{
-		width: 25%;
+		width: 33.33333%;
 	}
 }
 

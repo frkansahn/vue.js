@@ -7,12 +7,6 @@ var vm = new Vue({
   		vuejsDatepicker
   	},
 
-	props:{
-		isActive1: false,
-		isActive2: false,
-		isActive3: false
-	},
-
 	data:{
 		name:'',
 		email:'',
@@ -27,11 +21,13 @@ var vm = new Vue({
 		isErrorPhone:false,
 		isErrorDate:false,
 
-		showTemplateOne:false,
-		showTemplateTwo:false,
-		showTemplateThere:false,
+		show:false,
 
-		tr: vdp_translation_tr.js
+		tr: vdp_translation_tr.js,
+
+		bindProps:{
+			placeholder: "Telefon Numarasını Giriniz.."
+		}
 	},
 
 	methods:{
