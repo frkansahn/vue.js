@@ -39,22 +39,27 @@
 							</div>
 							<div class="fl col-12 form-content">
 								<div class="box col-12 p-left p-right p-bottom">
-									<span v-show="isErrorName" class="errorMessage">Lütfen adınızı giriniz..</span>						
-									<input :class="{errorBorder : isErrorName}" type="text" name="name" v-model="name" placeholder="Adınızı giriniz.." @click="isErrorName = false;">
+									<span v-show="isErrorName" class="errorMessage">Lütfen adınızı giriniz..</span>
+									<span v-show="!isErrorName" class="fl col-12 input-title">Adınız :</span>					
+									<input :class="{errorBorder : isErrorName}" type="text" name="name" v-model="name" placeholder="ör: Furkan ŞAHİN" @click="isErrorName = false;">
 								</div>
 								<div class="box col-12 p-left p-right p-bottom">
-									<span v-show="isErrorMail" class="errorMessage">Lütfen emailinizi kontrol ediniz..</span>							
-									<input :class="{errorBorder : isErrorMail}" type="email" name="email" v-model="email" placeholder="Emailinizi giriniz.." @click="isErrorMail = false;">
+									<span v-show="isErrorMail" class="errorMessage">Lütfen emailinizi kontrol ediniz..</span>
+									<span v-show="!isErrorMail" class="fl col-12 input-title">E-mail :</span>						
+									<input :class="{errorBorder : isErrorMail}" type="email" name="email" v-model="email" placeholder="ör: furkan.sahin@okul.com" @click="isErrorMail = false;">
 								</div>
 								<div class="box col-12 p-left p-right p-bottom pos-r">
-									<span v-show="isErrorDate" class="errorMessage">Lütfen tarih seçiniz..</span>						
-									<vuejs-datepicker :class="{errorBorder : isErrorDate}" :language="tr" v-model="date" placeholder="Tarih seçiniz.."></vuejs-datepicker>
+									<span v-show="isErrorDate" class="errorMessage">Lütfen tarih seçiniz..</span>
+									<span v-show="!isErrorDate" class="fl col-12 input-title">Tarih :</span>							
+									<vuejs-datepicker :class="{errorBorder : isErrorDate}" :language="tr" v-model="date" placeholder="ör: 03 Ara 2019"></vuejs-datepicker>
 								</div>
 								<div class="box col-12 p-left p-right p-bottom">
-									<span v-show="isErrorPhone" class="fl col-12 errorMessage">Lütfen telefon numaranızı giriniz..</span>						
+									<span v-show="isErrorPhone" class="fl col-12 errorMessage">Lütfen telefon numaranızı giriniz..</span>
+									<span v-show="!isErrorPhone" class="fl col-12 input-title">Telefon :</span>						
 									<vue-tel-input :class="{errorBorder : isErrorPhone}" @click="isErrorPhone = false;" v-model="phone"></vue-tel-input>
 								</div>
 								<div class="box col-12 p-left p-right p-bottom">
+									<span class="fl col-12 input-title">Mesaj :</span>	
 									<textarea class="fl col-12" v-model="message" placeholder="Mesajınızı giriniz.."></textarea>
 								</div>
 								<div class="box col-12 p-left p-right">

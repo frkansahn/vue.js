@@ -154,6 +154,20 @@ html,body,div,a,span,p
 	font-size: 20px;
 	font-weight: 500;
 	color: #ffffff;
+	white-space: nowrap;
+}
+
+.form-content input::placeholder , .form-content textarea::placeholder {
+    font-size: 12px;
+    color: #bdb2b2;
+}
+
+.input-title
+{
+	font-size: 12px;
+	font-weight: 500;
+	padding-bottom: 5px;
+	color: #000000;
 }
 
 .form-content {
