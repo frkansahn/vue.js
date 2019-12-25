@@ -136,6 +136,66 @@ html,body,div,a,span,p
 	text-decoration: underline;
 }
 
+.sozlesme {
+	float: left;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 999999
+}
+
+.sozlesme .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #00000045;
+}
+
+.sozlesme-detay {
+	background: #ffffff;
+	position: absolute;
+	top: 50%;
+	width: 50%;
+	z-index: 2;
+	padding: 30px 30px 10px 30px;
+	border-radius: 5px;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.sozlesme-detay .ortala
+{
+	display: flex;
+	align-self: center;
+	justify-content: center;
+}
+
+.sozlesme .kabul , .sozlesme .kapat {
+	font-size: 12px;
+	padding: 9px 15px;
+	border: 1px solid #dfdfdf;
+	border-radius: 3px;
+	margin-right: 5px;
+	margin-left: 5px;
+	cursor: pointer;
+}
+
+.sozlesme .kabul:hover, .sozlesme .kapat:hover {
+	background: #f12d2dba;
+	color: #ffffff;
+}
+
 .form-title {
 	padding: 20px;
 	background: #f12d2dba;
@@ -206,6 +266,7 @@ input[type="checkbox"]:checked + span
 {
 	text-decoration: underline;
 	color: #000000;
+	cursor: pointer;
 }
 
 .form-content {

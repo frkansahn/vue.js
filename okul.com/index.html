@@ -60,12 +60,30 @@
 								<div class="fl col-12">
 									<span v-show="isErrorSozlesme" class="fl col-12 errorSozlesme">Bu alanı işaretlemelisiniz..</span>
 									<span class="fl col-12 input-description">
-										<input type="checkbox" v-show="false" name="sozlesme" v-model="sozlesme"><span class="icon-checked" @click="sozlesme = !sozlesme; isErrorSozlesme = false;"></span> <span>Kullanıcı Sözleşmesi <strong>okudum</strong></span>
+										<input type="checkbox" v-show="false" name="sozlesme" v-model="sozlesme"><span class="icon-checked" @click="sozlesme = !sozlesme; isErrorSozlesme = false;"></span> <span>Kullanıcı Sözleşmesi <strong @click="sozlesmeGoster = true">okudum</strong></span>
 									</span>
 								</div>
 								<div class="box col-12 p-left p-right">
 									<input class="fl col-12 send" type="button" name="send" value="İletişime Geç" @click="send">
 								</div>
+								<transition name="bounce">
+									<div class="sozlesme" v-if="sozlesmeGoster">
+										<div class="sozlesme-detay">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate blanditiis fugit corporis numquam ipsam nihil excepturi maiores enim inventore necessitatibus assumenda similique, repellat dolores unde quibusdam illo doloremque minima voluptatibus provident ad? Asperiores doloribus officiis nostrum soluta voluptatibus molestiae reiciendis. Inventore odit velit nihil nulla mollitia libero, dicta aspernatur. Culpa libero ut nisi ex, voluptate error expedita nulla animi fugit eligendi eveniet dolores quaerat in harum. Distinctio eos, temporibus pariatur ipsum, vitae voluptatum possimus sit doloribus in fuga, sapiente nesciunt perferendis iste. Tenetur provident molestias quidem, reiciendis nisi suscipit. Asperiores quae nemo sed, alias assumenda, quas inventore dolorum fuga provident.
+											<div class="box col-12 ortala">
+												<div class="kabul" @click="sozlesme = true; sozlesmeGoster = false;">
+													Kabul Et
+												</div>
+												<div class="kapat" @click="sozlesmeGoster = false;">
+													Kapat
+												</div>
+											</div>
+										</div>
+										<div class="overlay" @click="sozlesmeGoster = false;">
+											
+										</div>
+									</div>
+								</transition>
 								
 								<transition name="slide-fade">
 									<div v-if="success" class="box col-12 success" :class="{active : success}">

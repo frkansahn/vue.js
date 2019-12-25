@@ -13,6 +13,7 @@ var vm = new Vue({
 		phone:'',
 		date: '',
 		message:'',
+		sozlesmeGoster:false,
 		sozlesme:false,
 
 		success: false,
@@ -67,6 +68,7 @@ var vm = new Vue({
 			this.phone = null;
 			this.email = null;
 			this.message = null;
+			this.sozlesme = false;
 
 		}
 	},
