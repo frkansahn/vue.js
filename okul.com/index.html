@@ -86,8 +86,11 @@
 								</transition>
 								
 								<transition name="slide-fade">
-									<div v-if="success" class="box col-12 success" :class="{active : success}">
+									<div v-if="success" class="box col-12 success">
 										İşlem başarıyla gerçekleştirildi.
+									</div>
+									<div v-if="unsuccess" class="box col-12 unsuccess">
+										İşlem başarısız oldu.
 									</div>
 								</transition>
 							</div>

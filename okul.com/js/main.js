@@ -17,6 +17,7 @@ var vm = new Vue({
 		sozlesme:false,
 
 		success: false,
+		unsuccess: false,
 
 		isErrorName:false,
 		isErrorMail:false,
@@ -61,7 +62,9 @@ var vm = new Vue({
 				return false;
 			}
 
-			this.success = true;
+			let random = Boolean(Math.round(Math.random()));
+			console.log(random);
+			random == true ? this.success = true : this.unsuccess = true;
 
 			this.name = null;
 			this.date = null;
@@ -89,6 +92,10 @@ var vm = new Vue({
 		success(newSuccess)
 		{
 			newSuccess == true ? setTimeout(() => this.success = false, 3000) : false; 
+		},
+		unsuccess(newUnsuccess)
+		{
+			newUnsuccess == true ? setTimeout(() => this.unsuccess = false, 3000) : false; 
 		}
 	}
 })

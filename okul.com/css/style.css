@@ -162,7 +162,6 @@ html,body,div,a,span,p
 .sozlesme-detay {
 	background: #ffffff;
 	position: absolute;
-	top: 50%;
 	width: 50%;
 	z-index: 2;
 	padding: 30px 30px 10px 30px;
