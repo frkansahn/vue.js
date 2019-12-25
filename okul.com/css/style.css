@@ -121,14 +121,14 @@ html,body,div,a,span,p
 #tasarim .col
 {
 	padding-bottom: 10px;
-    padding-top: 10px;
-    margin-bottom: 10px;
-    font-size: 16px;
-    font-weight: 500;
-    color: #ffffff;
-    cursor: pointer;
-    background: #f12d2dba;
-    border-radius: 5px;
+	padding-top: 10px;
+	margin-bottom: 10px;
+	font-size: 16px;
+	font-weight: 500;
+	color: #ffffff;
+	cursor: pointer;
+	background: #f12d2dba;
+	border-radius: 5px;
 }
 
 #tasarim .col:hover
@@ -141,6 +141,10 @@ html,body,div,a,span,p
 	background: #f12d2dba;
 	border-top-right-radius: 8px;
 	border-top-left-radius: 8px;
+	display: -webkit-box; 
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex; 
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -153,9 +157,9 @@ html,body,div,a,span,p
 	white-space: nowrap;
 }
 
-.form-content input::placeholder , .form-content textarea::placeholder {
-    font-size: 12px;
-    color: #bdb2b2;
+.form-content input[type="text"]::placeholder, .form-content input[type="email"]::placeholder, .form-content input[type="tel"]::placeholder , .form-content textarea::placeholder {
+	font-size: 12px;
+	color: #bdb2b2;
 }
 
 .input-title
@@ -166,13 +170,51 @@ html,body,div,a,span,p
 	color: #000000;
 }
 
+.input-description
+{
+	font-size: 12px;
+	font-weight: 500;
+	color: #736c6c;
+	display: -webkit-box; 
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex; 
+	display: flex;
+	align-items: center;
+	padding-top: 4px;
+}
+
+.icon-checked
+{
+	width: 10px;
+	height: 10px;
+	border-radius: 2px;
+	float: left;
+	box-sizing: border-box;
+	border: 1px solid #c1b5b5;
+	margin-right: 6px;
+	margin-bottom: 1px;
+	padding: 6px;
+}
+
+input[type="checkbox"]:checked + span
+{
+	background:url(../image/tick.svg) no-repeat center center;
+}
+
+.input-description strong
+{
+	text-decoration: underline;
+	color: #000000;
+}
+
 .form-content {
 	padding: 0 15px;
 	border: 1px solid #cec5c5;
 	position: relative;
 }
 
-.form-content input , .form-content textarea {
+.form-content input[type="text"] , .form-content input[type="email"]   , .form-content textarea {
 	width: 100%;
 	padding: 10px;
 	box-sizing: border-box;
@@ -182,9 +224,18 @@ html,body,div,a,span,p
 	outline: none;
 }
 
+.form-content input[type="tel"] {
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	float: left;
+	border-radius: 4px;
+	outline: none;
+}
+
 .form-content textarea {
 	min-height: 90px;
-	margin-bottom: 15px;
+	margin-bottom: 5px;
 	resize: vertical;
 }
 
@@ -199,11 +250,16 @@ html,body,div,a,span,p
 	text-transform: uppercase;
 	color: #ffffff;
 	cursor: pointer;
+	outline: none;
 }
 
 .form-content .send:hover {
 	background: #ffffff;
 	color: #f56666c9;
+}
+
+.input-description input {
+	margin: 0 5px 0 0;
 }
 
 .icon-phone
@@ -223,6 +279,14 @@ input[name="telephone"] {
 	font-size: 12px;
 	color: red;
 	padding-bottom: 3px;
+	float: left;
+}
+
+.errorSozlesme
+{
+	font-size: 10px;
+	color: red;
+	padding-top: 5px;
 	float: left;
 }
 

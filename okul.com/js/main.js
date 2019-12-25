@@ -13,6 +13,7 @@ var vm = new Vue({
 		phone:'',
 		date: '',
 		message:'',
+		sozlesme:false,
 
 		success: false,
 
@@ -20,6 +21,7 @@ var vm = new Vue({
 		isErrorMail:false,
 		isErrorPhone:false,
 		isErrorDate:false,
+		isErrorSozlesme:false,
 
 		show:false,
 
@@ -50,6 +52,11 @@ var vm = new Vue({
 			if(this.phone == '')
 			{
 				this.isErrorPhone = true;
+				return false;
+			}
+			if(this.sozlesme == false)
+			{
+				this.isErrorSozlesme = true;
 				return false;
 			}
 

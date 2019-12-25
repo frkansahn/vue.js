@@ -36,30 +36,37 @@
 								<div class="box col-12 p-left p-right p-bottom">
 									<span v-show="isErrorName" class="errorMessage">Lütfen adınızı giriniz..</span>
 									<span v-show="!isErrorName" class="fl col-12 input-title">Adınız :</span>					
-									<input :class="{errorBorder : isErrorName}" type="text" name="name" v-model="name" placeholder="ör: Furkan ŞAHİN" @click="isErrorName = false;">
+									<input :class="{errorBorder : isErrorName}" type="text" name="name" v-model="name" placeholder="örn: Furkan ŞAHİN" @click="isErrorName = false;">
 								</div>
 								<div class="box col-12 p-left p-right p-bottom">
 									<span v-show="isErrorMail" class="errorMessage">Lütfen emailinizi kontrol ediniz..</span>
 									<span v-show="!isErrorMail" class="fl col-12 input-title">E-mail :</span>						
-									<input :class="{errorBorder : isErrorMail}" type="email" name="email" v-model="email" placeholder="ör: furkan.sahin@okul.com" @click="isErrorMail = false;">
+									<input :class="{errorBorder : isErrorMail}" type="email" name="email" v-model="email" placeholder="örn: furkan.sahin@okul.com" @click="isErrorMail = false;">
 								</div>
 								<div class="box col-12 p-left p-right p-bottom pos-r">
 									<span v-show="isErrorDate" class="errorMessage">Lütfen tarih seçiniz..</span>
 									<span v-show="!isErrorDate" class="fl col-12 input-title">Tarih :</span>							
-									<vuejs-datepicker :class="{errorBorder : isErrorDate}" :language="tr" v-model="date" placeholder="ör: 03 Ara 2019"></vuejs-datepicker>
+									<vuejs-datepicker :class="{errorBorder : isErrorDate}" :language="tr" v-model="date" placeholder="örn: 03 Ara 2019"></vuejs-datepicker>
 								</div>
 								<div class="box col-12 p-left p-right p-bottom">
 									<span v-show="isErrorPhone" class="fl col-12 errorMessage">Lütfen telefon numaranızı giriniz..</span>
 									<span v-show="!isErrorPhone" class="fl col-12 input-title">Telefon :</span>						
-									<vue-tel-input :class="{errorBorder : isErrorPhone}" @click="isErrorPhone = false;" v-model="phone" v-bind="bindProps"></vue-tel-input>
+									<vue-tel-input :class="{errorBorder : isErrorPhone}" @click="isErrorPhone = false;" :input-options="{ showDialCode: true }" v-model="phone" v-bind="bindProps"></vue-tel-input>
 								</div>
 								<div class="box col-12 p-left p-right p-bottom">
 									<span class="fl col-12 input-title">Mesaj :</span>	
 									<textarea class="fl col-12" v-model="message" placeholder="Mesajınızı giriniz.."></textarea>
 								</div>
+								<div class="fl col-12">
+									<span v-show="isErrorSozlesme" class="fl col-12 errorSozlesme">Bu alanı işaretlemelisiniz..</span>
+									<span class="fl col-12 input-description">
+										<input type="checkbox" v-show="false" name="sozlesme" v-model="sozlesme"><span class="icon-checked" @click="sozlesme = !sozlesme; isErrorSozlesme = false;"></span> <span>Kullanıcı Sözleşmesi <strong>okudum</strong></span>
+									</span>
+								</div>
 								<div class="box col-12 p-left p-right">
 									<input class="fl col-12 send" type="button" name="send" value="İletişime Geç" @click="send">
 								</div>
+								
 								<transition name="slide-fade">
 									<div v-if="success" class="box col-12 success" :class="{active : success}">
 										İşlem başarıyla gerçekleştirildi.
